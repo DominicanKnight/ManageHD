@@ -454,6 +454,7 @@ class MainWindow(QMainWindow):
     def stdConversion(self):
         """ Called by the STANDARD menu item under FILE. Sets ManageHD to perform the standard Handbrake conversion. """
         Progress.statuses['HandbrakeOptionsString'] = str(" -i {0} -o {1} -f mkv --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3")
+        Progress.statuses['OutputExtension'] = 'mkv'
         self.altAction.setChecked(False)
         self.altAction.setIcon(QIcon('convert.png'))
         self.stdAction.setIcon(QIcon('checked.jpg'))
@@ -462,6 +463,7 @@ class MainWindow(QMainWindow):
     def altConversion(self):
         """ Called by the ALTERNATE menu item under FILE. Sets ManageHD to perform Handbrake conversions using an alternate series of settings. """
         Progress.statuses['HandbrakeOptionsString'] = str(" -i {0} -o {1} -f mp4 --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3")
+        Progress.statuses['OutputExtension'] = 'mp4'
         self.stdAction.setChecked(False)
         self.altAction.setIcon(QIcon('checked.jpg'))
         self.stdAction.setIcon(QIcon('convert.png'))

@@ -46,7 +46,7 @@ class Handbrake():
         fm = FileManip()
         MovieName = fm.GetFileNameOnlyFromPathWithFile(movie)
         
-        MovieName = MovieName[:len(MovieName)-3] + str(Progress.statuses['HandbrakeOptionsString'])[20:][:3]
+        MovieName = MovieName[:len(MovieName)-3] + Progress.statuses['OutputExtension']
 
         if sys.platform[:5] == "linux" or sys.platform[:3] == "osx":
             handbrakeOsSpecificPrefix = "/usr/bin/HandBrakeCLI"
@@ -114,7 +114,8 @@ class Progress():
                 'InvalidQuotingInFileName' : "", \
                 'NoVideoFilesFound' : 0, \
                 'DirectoryChanged' : False, \
-                'HandbrakeOptionsString' : str(" -i {0} -o {1} -f mkv --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3"),
+                'HandbrakeOptionsString' : str(" -i {0} -o {1} -f mkv --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3"), \
+                'OutputExtension' : "mkv", 
                }
     
     cliParams ={'sourceDir' : None, \
@@ -208,7 +209,8 @@ class Progress():
                     'InvalidQuotingInFileName' : "", \
                     'NoVideoFilesFound' : 0, \
                     'DirectoryChanged' : False, \
-                    'HandbrakeOptionsString' : Progress.statuses['HandbrakeOptionsString'],
+                    'HandbrakeOptionsString' : Progress.statuses['HandbrakeOptionsString'], \
+                    'OutputExtension' : "mkv", 
                    }
         Progress.statuses = copy.deepcopy(resetStatuses)
         if Progress.cliParams['ProcessingSpeedInGBperHour'] != 0:
@@ -234,7 +236,7 @@ class Progress():
         self.statuses['NoVideoFilesFound']          = newStatuses['NoVideoFilesFound'] 
         self.statuses['DirectoryChanged']           = newStatuses['DirectoryChanged']
         self.statuses['HandbrakeOptionsString']     = newStatuses['HandbrakeOptionsString']
-
+        self.statuses['OutputExtension']            = newStatuses['OutputExtension']
 
     def ArchiveSourceVideo(archiveDir, sourceDir, destinationDir, listOfSourceVideos=None):
         """ Move the source video files that were actually processed to the archive directory. """
@@ -606,7 +608,6 @@ class ProcessMovies():
         if Params['videoTypes'] != None:            
             cliParameters['videoTypes'] = Params['videoTypes']
         
-        #if Progress.statuses['HandbrakeOptionsString'] = str(" -i {0} -o {1} -f mkv --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3")
         self.GetFilesAndFileStats(cliParameters)
         
         archivingResult = self.Start(useGUI = True, cliParameters=cliParameters)
