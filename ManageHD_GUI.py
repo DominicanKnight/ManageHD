@@ -1,4 +1,22 @@
 #!/usr/bin/env python3.4
+
+# #########################################################################
+# This file is part of ManageHD.
+#
+# ManageHD is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# ManageHD is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ManageHD.  If not, see <http://www.gnu.org/licenses/>.
+# #########################################################################
+
 import sys
 import os
 import string
@@ -371,7 +389,8 @@ class MainWindow(QMainWindow):
     def aboutHelp(self):
         """ Displays the ABOUT box and sets its content. """
         QMessageBox.about(self, "About ManageHD",
-                          "This software allows you to select an entire "
+                          "Program written in Python v3.4 \n\n"
+                          "ManageHD allows you to select an entire "
                           "directory of HD video files and lower their "
                           "resolution from 1080 HD to 720 HD, in batch. "
                           "It calls the HandBrake Command Line Interface "
