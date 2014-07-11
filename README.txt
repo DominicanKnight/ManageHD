@@ -2,7 +2,12 @@
 - ManageHD -
   --------
   
-A python v3.4 program.
+A python v3.4 program written with the Wing IDE.
+
+Wing IDE is professional level Python IDE written from the 
+ground up specifically for Python. Is is available at:
+
+	http://wingware.com
 
 ManageHD allows you to select an entire directory of HD 
 video files and lower their resolution from 1080 HD 
