@@ -2,7 +2,7 @@
 - ManageHD -
   --------
   
-A python v3.4 program written with the Wing IDE.
+A python v3.4 program written using the Wing IDE.
 
 Wing IDE is professional level Python IDE written from the 
 ground up specifically for Python. Is is available at:
