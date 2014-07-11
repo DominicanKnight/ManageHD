@@ -149,8 +149,9 @@ class MainWindow(QMainWindow):
         self.__CreateActions()
         self.__CreateMenus()
         self.fileMenu.addAction(self.stdAction)
-        self.fileMenu.addAction(self.altAction)        
-        self.stdAction.setIcon(QIcon('checked.jpg'))
+        self.fileMenu.addAction(self.altAction)
+        if Progress.runPlatform == 'win':
+            self.stdAction.setIcon(QIcon('checked.jpg'))
         self.stdAction.setChecked(True)
         self.fileMenu.addSeparator()
         self.fileMenu.addAction(self.exitAction)
@@ -475,8 +476,9 @@ class MainWindow(QMainWindow):
         Progress.statuses['HandbrakeOptionsString'] = str(" -i {0} -o {1} -f mkv --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3")
         Progress.statuses['OutputExtension'] = 'mkv'
         self.altAction.setChecked(False)
-        self.altAction.setIcon(QIcon('convert.png'))
-        self.stdAction.setIcon(QIcon('checked.jpg'))
+        if Progress.runPlatform == "win":
+            self.altAction.setIcon(QIcon('convert.png'))
+            self.stdAction.setIcon(QIcon('checked.jpg'))
         self.stdAction.setChecked(True)
     
     def altConversion(self):
@@ -484,8 +486,9 @@ class MainWindow(QMainWindow):
         Progress.statuses['HandbrakeOptionsString'] = str(" -i {0} -o {1} -f mp4 --width 1280 --crop 0:0:0:0 --decomb -s 1 -N eng -m --large-file --encoder x264 -q 19 -E ffac3")
         Progress.statuses['OutputExtension'] = 'mp4'
         self.stdAction.setChecked(False)
-        self.altAction.setIcon(QIcon('checked.jpg'))
-        self.stdAction.setIcon(QIcon('convert.png'))
+        if Progress.runPlatform == "win":
+            self.altAction.setIcon(QIcon('checked.jpg'))
+            self.stdAction.setIcon(QIcon('convert.png'))
         self.altAction.setChecked(True)
 
     def CopyFunction(): # Not Implemented

@@ -228,7 +228,7 @@ class Progress():
                     'NoVideoFilesFound' : 0, \
                     'DirectoryChanged' : False, \
                     'HandbrakeOptionsString' : Progress.statuses['HandbrakeOptionsString'], \
-                    'OutputExtension' : "mkv", 
+                    'OutputExtension' : Progress.statuses['OutputExtension'], 
                    }
         Progress.statuses = copy.deepcopy(resetStatuses)
         if Progress.cliParams['ProcessingSpeedInGBperHour'] != 0:
@@ -414,7 +414,7 @@ class FileManip():
                 Progress.cliParams['ProcessingSpeedInGBperHour'] = processingTime
         return params
     
-    def WriteSettingsFile(self): # Not Implemented
+    def WriteSettingsFile(self): 
         # if the file doesn't exist create it
         if not self.VerifyExists('cliattribs.xm'):
             with open("cliattribs.xm", "w") as text_file:
@@ -438,7 +438,7 @@ class FileManip():
                         nix.text = params['sourceDir']
                     if directory.get('name') == "archive":
                         nix.text = params['archiveDir']
-                    if directory.get('name') == "source":
+                    if directory.get('name') == "destination":
                         nix.text = params['destinationDir']
 
         for speed in root.findall('speed'):
