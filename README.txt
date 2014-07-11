@@ -4,8 +4,8 @@
   
 A python v3.4 program written using the Wing IDE.
 
-Wing IDE is professional level Python IDE written from the 
-ground up specifically for Python. Is is available at:
+Wing IDE is professional level development environment written 
+from the ground up specifically for Python. It is available at:
 
 	http://wingware.com
 
