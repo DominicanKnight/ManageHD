@@ -51,7 +51,7 @@ Files included in this release:
     convert.png         copy.png
     ding.mp3            exit.png
     folder.png          new.png
-    gpl.txt
+    gpl.txt             wingware-logo-180x58.png
 
 Python Libraries Called:
     sys                os
