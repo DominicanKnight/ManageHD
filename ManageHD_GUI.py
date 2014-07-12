@@ -405,7 +405,7 @@ class MainWindow(QMainWindow):
                           "of its 1080 HD source file. \n\n"
                           "Coding was done by InfanteLabz. \n\n"
                           "This sofware is released under GPL v3 "
-                          "licensing. ")
+                          "licensing. \n\n Developed on Wing IDE")
 
     def exitFile(self):
         """ Exits the Main Window, ending the program. """
