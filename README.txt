@@ -27,7 +27,7 @@ order to re-encode each video.
 
 You *must* have the Handbrake CLI installed to use this software. 
 
-The CLI for your platform can be downloaded at:
+The HandbrakeCLI for your platform can be downloaded at:
 
      http://handbrake.fr/downloads2.php
 
