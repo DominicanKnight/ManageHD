@@ -5,7 +5,7 @@
 Platform: Windows, Linux, OSX
 
 ManageHD is a python v3.4 program written using the Wing 
-IDE. Wing IDE is professional level development environment 
+IDE. Wing IDE is a professional level development environment 
 written from the ground up specifically for Python. It is 
 available at:
 
